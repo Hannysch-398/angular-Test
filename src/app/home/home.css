@@ -1,0 +1,19 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin: 4rem;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 4rem;
+  margin: 4rem ;
+}

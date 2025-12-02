@@ -1,0 +1,48 @@
+<h1>Halli Hallo</h1>
+<h2>{{ title | uppercase }}</h2>
+<div class="flex">
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus velit
+    excepturi a ipsa in earum iste itaque dolores adipisci, deleniti modi,
+    magni, ut laborum asperiores temporibus numquam fugit accusamus rerum.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus velit
+    excepturi a ipsa in earum iste itaque dolores adipisci, deleniti modi,
+    magni, ut laborum asperiores temporibus numquam fugit accusamus rerum.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus velit
+    excepturi a ipsa in earum iste itaque dolores adipisci, deleniti modi,
+    magni, ut laborum asperiores temporibus numquam fugit accusamus rerum.
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus velit
+    excepturi a ipsa in earum iste itaque dolores adipisci, deleniti modi,
+    magni, ut laborum asperiores temporibus numquam fugit accusamus rerum.
+  </p>
+</div>
+<app-text-box></app-text-box>
+
+@if (showText) {
+  <div class="flex">
+    @for (text of content; track text) {
+      <p>{{ text }}</p>
+    }
+  </div>
+} @else {
+  <p>Sorry kein text</p>
+}
+@if (showText) {
+  <p>text</p>
+}
+
+@if (toggle) {
+  <div class="grid" >@for (t of content; track trackByText($index, t)) {
+    <app-text-box [text]="t"></app-text-box>
+  }</div>
+}
+
+
+
+<button (click)="showBool()"> click me!</button>
