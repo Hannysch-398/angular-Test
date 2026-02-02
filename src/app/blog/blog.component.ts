@@ -1,9 +1,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Post} from '../interface/post';
+import {BlogDetailComponent} from '../blog-detail/blog-detail.component';
 
 @Component({
   selector: 'app-blog',
-  imports: [],
+  imports: [
+    BlogDetailComponent
+  ],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })
@@ -50,4 +53,7 @@ export class BlogComponent implements OnInit ,OnDestroy{
       published: false,
     }
   ];
+
+
+
 }

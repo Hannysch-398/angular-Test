@@ -1,33 +1,39 @@
 
 
 <div class="blog-container">
-@for (blogPosts of posts ; track blogPosts.id; let x = $even) {<div class="blog-post" >
-  @if (x) {
-    <div class="even">even</div>
+<!--@for (blogPosts of posts ; track blogPosts.id; let x = $even) {<div class="blog-post" >-->
+<!--  @if (x) {-->
+<!--    <div class="even">even</div>-->
+<!--  }-->
+
+
+<!--<h3>{{blogPosts.title}}</h3>-->
+<!--  @if (blogPosts.published) {-->
+<!--    <p>Post was published</p>-->
+<!--    <p>{{blogPosts.date}}</p>-->
+
+<!--  }-->
+<!--  <p>By: {{blogPosts.author}}</p></div>-->
+<!--}@for (blogPosts of posts ; track blogPosts.id; let x = $odd) {<div class="blog-post" >-->
+<!--  @if (x) {-->
+<!--    <div class="even">Odd</div>-->
+<!--  }-->
+
+
+<!--  <h3>{{blogPosts.title}}</h3>-->
+<!--  @if (blogPosts.published) {-->
+<!--    <p>Post was published</p>-->
+<!--    <p>{{blogPosts.date}}</p>-->
+
+<!--  }-->
+<!--  <p>By: {{blogPosts.author}}</p></div>-->
+<!--}-->
+
+  @for (blogPosts of posts; track blogPosts.id) {
+    <app-blog-detail [posts]="blogPosts"></app-blog-detail>
+
   }
-
-
-<h3>{{blogPosts.title}}</h3>
-  @if (blogPosts.published) {
-    <p>Post was published</p>
-    <p>{{blogPosts.date}}</p>
-
-  }
-  <p>By: {{blogPosts.author}}</p></div>
-}@for (blogPosts of posts ; track blogPosts.id; let x = $odd) {<div class="blog-post" >
-  @if (x) {
-    <div class="even">Odd</div>
-  }
-
-
-  <h3>{{blogPosts.title}}</h3>
-  @if (blogPosts.published) {
-    <p>Post was published</p>
-    <p>{{blogPosts.date}}</p>
-
-  }
-  <p>By: {{blogPosts.author}}</p></div>
-}</div>
+</div>
 
 
 

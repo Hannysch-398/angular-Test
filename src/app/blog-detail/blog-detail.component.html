@@ -1,0 +1,13 @@
+<!--<h3>{{posts().title}}</h3>-->
+<!--  @if (posts().published) {-->
+<!--    <p>Post was published</p>-->
+<!--    <p>{{posts>().date}}</p>-->
+
+<!--  }-->
+<!--  <p>By: {{posts().author}}</p>-->
+
+<!--<button (click)="like()"></button>-->
+<h3>{{posts()?.title}}</h3>
+<p>{{posts().published}}</p>
+<p>{{posts().date}}</p>
+<p>{{posts().content}}</p>
