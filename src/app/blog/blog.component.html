@@ -29,9 +29,8 @@
 <!--  <p>By: {{blogPosts.author}}</p></div>-->
 <!--}-->
 
-  @for (blogPosts of posts; track blogPosts.id) {
+  @for (blogPosts of posts(); track blogPosts.id) {
     <app-blog-detail [posts]="blogPosts"></app-blog-detail>
-
   }
 </div>
 

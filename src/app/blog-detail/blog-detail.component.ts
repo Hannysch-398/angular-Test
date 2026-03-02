@@ -1,5 +1,6 @@
-import {Component, input, InputSignal} from '@angular/core';
+import {Component, inject, input, InputSignal} from '@angular/core';
 import {Post} from '../interface/post';
+import {PostServiceService} from '../post-service.service';
 
 @Component({
   selector: 'app-blog-detail',
@@ -8,13 +9,9 @@ import {Post} from '../interface/post';
   styleUrl: './blog-detail.component.css'
 })
 export class BlogDetailComponent {
+  postsService = inject(PostServiceService);
 
   posts: InputSignal<Post>= input.required<Post>();
 
-  // liked = output<void>();
-  //
-  // like() {
-  //   this.liked.emit();
-  // }
 
 }
