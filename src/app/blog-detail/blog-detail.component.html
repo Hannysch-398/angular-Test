@@ -6,9 +6,9 @@
 <!--  }-->
 <!--  <p>By: {{posts().author}}</p>-->
 
-<button (click)="postsService.onPostLiked(posts().id)">like post</button>
-<h3>{{posts()?.title}}</h3>
+<h3>{{posts().title}}</h3>
 <p>{{posts().published}}</p>
 <p>{{posts().date}}</p>
 <p>{{posts().content}}</p>
 <p>{{posts().likes}}</p>
+<button (click)="postService.likePost(posts().id)">Like</button>

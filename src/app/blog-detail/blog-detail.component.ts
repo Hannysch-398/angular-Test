@@ -1,6 +1,6 @@
 import {Component, inject, input, InputSignal} from '@angular/core';
 import {Post} from '../interface/post';
-import {PostServiceService} from '../post-service.service';
+import {PostService} from '../services/post.service';
 
 @Component({
   selector: 'app-blog-detail',
@@ -9,9 +9,13 @@ import {PostServiceService} from '../post-service.service';
   styleUrl: './blog-detail.component.css'
 })
 export class BlogDetailComponent {
-  postsService = inject(PostServiceService);
 
   posts: InputSignal<Post>= input.required<Post>();
 
+  postService = inject(PostService);
+
+//  like(postId: number): void {
+//    this.postService.likePost(postId);
+//  }
 
 }

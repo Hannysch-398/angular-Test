@@ -1,4 +1,5 @@
 .text-box {
   background-color: beige;
   padding: 2rem;
+  border-radius: 1rem;
 }

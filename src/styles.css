@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  margin: 0;
+  border: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+button{
+  background-color: #8888e3;
+  color: #ffffff;
+  border: 1px solid #8888e3;
+  padding: 0.5rem 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0.5rem;
+}
+button:hover{
+  background-color: #ffffff;
+  color: #8888e3;
+}
