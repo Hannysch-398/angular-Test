@@ -17,3 +17,8 @@
 .even{
 border-bottom: 5px solid red;
 }
+
+app-blog-detail{
+  margin: 0.3rem;
+  padding: 0.3rem;
+}

@@ -1,7 +1,10 @@
 
-
+<div class="count-container">
+  <p>Likes: {{allLikes()}}</p>
+</div>
 <div class="blog-container">
-<!--@for (blogPosts of posts ; track blogPosts.id; let x = $even) {<div class="blog-post" >-->
+
+  <!--@for (blogPosts of posts ; track blogPosts.id; let x = $even) {<div class="blog-post" >-->
 <!--  @if (x) {-->
 <!--    <div class="even">even</div>-->
 <!--  }-->
@@ -30,7 +33,7 @@
 <!--}-->
 
   @for (blogPosts of posts(); track blogPosts.id) {
-    <app-blog-detail [posts]="blogPosts"></app-blog-detail>
+    <app-blog-detail [posts]="blogPosts" [mostLiked]="blogPosts.id === mostLikedPost()"></app-blog-detail>
 
   }
 </div>
