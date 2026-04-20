@@ -1,6 +1,6 @@
-import {Component, inject, input, InputSignal} from '@angular/core';
-import {Post} from '../interface/post';
-import {PostService} from '../services/post.service';
+import { Component, computed, inject, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-blog-detail',
@@ -9,13 +9,18 @@ import {PostService} from '../services/post.service';
   styleUrl: './blog-detail.component.css'
 })
 export class BlogDetailComponent {
-
-  posts: InputSignal<Post>= input.required<Post>();
-
+  private activatedRoute = inject(ActivatedRoute);
   postService = inject(PostService);
 
-//  like(postId: number): void {
-//    this.postService.likePost(postId);
-//  }
+  detailPostID = signal(0);
 
+  post = this.postService.getPost(this.detailPostID);
+
+  constructor() {
+
+    // const postId : number = Number(this.route.snapshot.params['id']);
+    this.activatedRoute.params.subscribe((params) => {
+      this.detailPostID.set(Number(params['id']));
+    });
+  }
 }

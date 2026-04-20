@@ -5,6 +5,6 @@ export interface Post {
   author: string;
   date?: Date;
   published?: boolean;
-  likes?: number;
+  likes: number;
 }
 

@@ -1,0 +1,26 @@
+<div class="container"><form ngNativeValidate class="form">
+  <label>ID
+    <input type="number" required /></label>
+  <label>Title<input type="text" ></label>
+  <label>Content<textarea rows="8"></textarea></label>
+  <label>
+    Select Publish state
+    <fieldset>
+      <label>published<input type="radio" value="published" name="state"/> </label>
+      <label>unpublished<input type="radio"
+                               name="state"
+                               value="unpublished"
+
+                               checked/>
+      </label>
+    </fieldset>
+  </label>
+  <label>Datum<input type="date"/> </label>
+  <label> Author
+    <select>
+      @for (author of authors(); track $index) {
+        <option>{{ author }}</option>
+      }
+    </select></label>
+  <label><button type="submit">Submit Form</button></label>
+</form></div>

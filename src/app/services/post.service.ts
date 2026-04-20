@@ -1,4 +1,4 @@
-import {Injectable, Signal, signal, WritableSignal} from '@angular/core';
+import {computed, Injectable, Signal, signal, WritableSignal} from '@angular/core';
 import {Post} from '../interface/post';
 
 @Injectable({
@@ -46,6 +46,18 @@ export class PostService {
 
   getAllPosts() : Signal<Post[]> {
     return this.posts.asReadonly();
+  }
+
+  getAllAuthors(): Signal<string[]> {
+    return computed(() =>
+      [...new Set(this.posts().map(post => post.author).filter(Boolean))]
+    );
+  }
+
+  getPost(idSignal: Signal<number>): Signal<Post | undefined> {
+    return computed(() =>
+      this.posts().find(post => post.id === idSignal())
+    );
   }
 
   likePost(postId: number): void {
