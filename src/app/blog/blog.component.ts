@@ -43,4 +43,22 @@ export class BlogComponent implements OnInit, OnDestroy {
   )
 
 
+  allLikes: Signal<number> = computed(() =>
+    this.posts().reduce((sum, post) => sum + (post.likes ?? 0), 0)
+  );
+
+  mostLikedPost: Signal<number> = computed(() => {
+    let maxLikes = 0;
+    let mostLikedIndex = 0;
+    for (let i = 0; i < this.posts().length; i++) {
+      const currentLikes = this.posts()[i].likes ?? 0;
+      if (currentLikes > maxLikes) {
+        maxLikes = currentLikes;
+        mostLikedIndex = i+1;
+      }
+    }
+    return mostLikedIndex;
+  });
+
+
 }
