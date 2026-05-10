@@ -1,6 +1,6 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PostService } from '../services/post.service';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-blog-detail',

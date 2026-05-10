@@ -1,9 +1,9 @@
 import {Routes} from '@angular/router';
-import {PageComponent} from "./page/page.component";
-import {appHome} from './home/home';
-import {TestComponent} from './test/test.component';
-import {TextBoxComponent} from './text-box/text-box.component';
-import {BlogDetailComponent} from './blog-detail/blog-detail.component';
+import {PageComponent} from "./blog-components/page/page.component";
+import {appHome} from './other-components/home/home';
+import {TestComponent} from './other-components/test/test.component';
+import {TextBoxComponent} from './other-components/text-box/text-box.component';
+import {BlogDetailComponent} from './blog-components/blog-detail/blog-detail.component';
 import {CreatePostComponent} from './create-post/create-post.component';
 
 

@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit, inject, Signal, computed, effect} from '@angular/core';
-import {Post} from '../interface/post';
-import {PostService} from '../services/post.service';
+import {Post} from '../../interface/post';
+import {PostService} from '../../services/post.service';
 import {RouterLink} from '@angular/router';
 
 @Component({
