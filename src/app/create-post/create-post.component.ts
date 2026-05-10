@@ -1,6 +1,5 @@
-import {Component, inject, model, Signal} from '@angular/core';
+import {Component, inject, Signal} from '@angular/core';
 import {PostService} from '../services/post.service';
-import {Post} from '../interface/post';
 import {FormsModule} from '@angular/forms';
 import {CreatePost} from '../interface/create-post';
 

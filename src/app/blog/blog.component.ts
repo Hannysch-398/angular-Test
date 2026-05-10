@@ -1,8 +1,6 @@
 import {Component, OnDestroy, OnInit, inject, Signal, computed, effect} from '@angular/core';
 import {Post} from '../interface/post';
-import {BlogDetailComponent} from '../blog-detail/blog-detail.component';
 import {PostService} from '../services/post.service';
-import {JsonPipe, NgOptimizedImage} from '@angular/common';
 import {RouterLink} from '@angular/router';
 
 @Component({
