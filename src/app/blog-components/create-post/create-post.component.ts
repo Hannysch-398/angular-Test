@@ -1,7 +1,7 @@
 import {Component, inject, Signal} from '@angular/core';
-import {PostService} from '../services/post.service';
+import {PostService} from '../../services/post.service';
 import {FormsModule} from '@angular/forms';
-import {CreatePost} from '../interface/create-post';
+import {CreatePost} from '../../interface/create-post';
 
 @Component({
   selector: 'app-create-post',
