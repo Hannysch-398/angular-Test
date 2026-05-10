@@ -7,10 +7,10 @@ import {BlogDetailComponent} from './blog-detail/blog-detail.component';
 import {CreatePostComponent} from './create-post/create-post.component';
 
 
-export const routes: Routes = [{path: "", component: PageComponent}, {
-  path: "blog",
-  component: PageComponent
-}, {path: "home", component: appHome}, {path: "test", component: TestComponent}, {
-  path: "textBox",
-  component: TextBoxComponent
-}, {path: "blog/detail/:id", component: BlogDetailComponent}, {path: "create", component: CreatePostComponent}];
+export const routes: Routes = [
+  {path: "", redirectTo: "/blog", pathMatch: "full"},
+  { path: "blog", component: PageComponent},
+  {path: "home", component: appHome}, {path: "test", component: TestComponent},
+  {path: "textBox", component: TextBoxComponent},
+  {path: "blog/detail/:id", component: BlogDetailComponent},
+  {path: "create", component: CreatePostComponent}];

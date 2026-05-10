@@ -1,3 +1,22 @@
+.blog-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.blog-header-content{
+  margin: 0.5rem;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+.blog-header-number{
+  color: #8888e3;
+  margin-top: 0;
+  margin-bottom: 0;
+
+}
 .blog-post{
   background-color: lavender;
   padding: 0.5rem;
@@ -14,24 +33,7 @@
 
 }
 
-.even{
-border-bottom: 5px solid red;
-}
 
-.highlight{
-/*height: 20px;*/
-  background-color: red;
-  color: white;
-  padding: 0.5rem;
-  margin: 0.5rem;
-  margin-left: 0;
-  border-radius: 0.5rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-
-}
 
 .heart{
   height: 2.5rem;
@@ -41,8 +43,25 @@ border-bottom: 5px solid red;
   display: flex;
   flex-direction: column;
   justify-content: end;
+  align-items: center;
+
 }
 
 .post{
-  /*border: 2px solid #8888e3;*/
+  border: 2px solid #8888e3;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.post-most-liked{
+  border: 2px solid #af9c09;
+}
+
+.button-most-liked{
+  background-color: #af9c09;
+  border: 2px solid #af9c09;
+}
+.button-most-liked:hover{
+  background-color: #ffffff;
+  color: #af9c09;
 }

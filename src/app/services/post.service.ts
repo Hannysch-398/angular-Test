@@ -1,5 +1,6 @@
 import {computed, Injectable, Signal, signal, WritableSignal} from '@angular/core';
 import {Post} from '../interface/post';
+import {CreatePost} from '../interface/create-post';
 
 @Injectable({
   providedIn: 'root'
@@ -66,6 +67,22 @@ export class PostService {
         p.id === postId ? { ...p, likes: (p.likes ?? 0) + 1 } : p
       )
     );
+  }
+  createPost(post: CreatePost): void {
+    this.posts.update(posts => [...posts, this.convertToPost(post)]);
+    console.log(this.posts());
+  }
+
+  convertToPost(post: CreatePost): Post {
+    return {
+      id: this.posts().length + 1,
+      title: post.title,
+      content: post.content,
+      author: post.author,
+      date: new Date(),
+      published: post.published,
+      likes: 0
+    };
   }
 
 }

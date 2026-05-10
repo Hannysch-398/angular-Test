@@ -2,15 +2,13 @@ import {Component, OnDestroy, OnInit, inject, Signal, computed, effect} from '@a
 import {Post} from '../interface/post';
 import {BlogDetailComponent} from '../blog-detail/blog-detail.component';
 import {PostService} from '../services/post.service';
-import {JsonPipe} from '@angular/common';
+import {JsonPipe, NgOptimizedImage} from '@angular/common';
 import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-blog',
   imports: [
-    BlogDetailComponent,
-    JsonPipe,
-    RouterLink
+    RouterLink,
   ],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
@@ -34,14 +32,6 @@ export class BlogComponent implements OnInit, OnDestroy {
   postService = inject(PostService);
 
   posts: Signal<Post[]> = this.postService.getAllPosts();
-  totalLikes: Signal<number> = computed(() =>
-    this.posts().reduce((sum, post) => sum + (post.likes ?? 0), 0)
-  );
-
-  popularPost = computed(() =>
-    this.posts().sort((a, b) => b.likes - a.likes)[0].id
-  )
-
 
   allLikes: Signal<number> = computed(() =>
     this.posts().reduce((sum, post) => sum + (post.likes ?? 0), 0)
