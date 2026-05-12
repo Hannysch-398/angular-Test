@@ -25,7 +25,6 @@
 
 }
 
-
 .blog-container{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -34,17 +33,12 @@
 }
 
 
-
-.heart{
-  height: 2.5rem;
-}
-
 .blog-detail{
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items: center;
-
+  margin: 0.5rem;
 }
 
 .post{

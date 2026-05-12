@@ -1,0 +1,64 @@
+
+
+<h1>Beitrag erstellen</h1>
+  <form class="form" (ngSubmit)="onSubmit()" [formGroup]="postForm">
+
+    <label for="title">Titel</label>
+    <input
+      type="text"
+      id="title"
+      name="title"
+      formControlName="title"
+      class="form-field"
+    />
+    @if (postForm.get('title')?.invalid && postForm.get('title')?.touched) {
+      <p style="color: red">A title needs at least 5 letters!</p>
+    }
+    <label id="content">Inhalt</label>
+    <textarea rows="8"
+    name="content"
+    id="content"
+    class="form-field"
+    formControlName="content">
+
+    </textarea>
+    <label>Veröffentlichungsstatus</label>
+      <fieldset class="form-field">
+        <label>Veröffentlicht</label>
+        <input formControlName="published" type="radio" [value]="true" name="published" />
+        <label>Unveröffentlicht</label>
+        <input formControlName="published" type="radio" name="published" [value]="false" checked/>
+      </fieldset>
+
+    <label for="date">Datum </label>
+    <input type="date"
+    formControlName="date"
+    name="date"
+    id="date"
+    required
+    class="form-field"
+    />
+    @if (postForm.get('date')?.invalid && postForm.get('date')?.touched) {
+      <p style="color: red">Please, select a date.</p>
+    }
+    <label for="author"> Autor</label>
+      <select formControlName="author" name="author" id="author" class="form-field">
+        @for (author of authors(); track $index) {
+          <option>{{ author }}</option>
+        }
+      </select>
+    @if (postForm.get('author')?.invalid && postForm.get('author')?.touched) {
+      <p style="color: red">Please select an author.</p>
+    }
+
+    <button type="submit">Erstellen</button>
+
+    @if ( submitted && postForm.status === 'INVALID') {
+      <p style="color: red">Form is invalid</p>
+    }
+
+    @if ( submitted && postForm.status === 'VALID') {
+      <p style="color: green">Form is valid</p>
+    }
+  </form>
+

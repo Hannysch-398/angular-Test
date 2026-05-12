@@ -4,7 +4,7 @@ import {appHome} from './other-components/home/home';
 import {TestComponent} from './other-components/test/test.component';
 import {TextBoxComponent} from './other-components/text-box/text-box.component';
 import {BlogDetailComponent} from './blog-components/blog-detail/blog-detail.component';
-import {CreatePostComponent} from './blog-components/create-post/create-post.component';
+import {CreatePostComponent} from './blog-components/create-post-reactive/create-post.component';
 
 
 export const routes: Routes = [
